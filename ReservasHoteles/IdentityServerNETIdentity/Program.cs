@@ -1,4 +1,4 @@
-﻿using IdentityServer;
+﻿using IdentityServerNETIdentity;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -20,9 +20,21 @@ try
         .ConfigureServices()
         .ConfigurePipeline();
 
+    SeedData.EnsureSeedData(app);
+    Log.Information("Done seeding database. Exiting.");
+
+    // this seeding is only for the template to bootstrap the DB and users.
+    // in production you will likely want a different approach.
+    if (args.Contains("/seed"))
+    {
+        Log.Information("Seeding database...");
+        
+        return;
+    }
+
     app.Run();
 }
-catch (Exception ex)
+catch (Exception ex) when (ex is not HostAbortedException)
 {
     Log.Fatal(ex, "Unhandled exception");
 }
