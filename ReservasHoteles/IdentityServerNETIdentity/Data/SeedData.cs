@@ -1,12 +1,11 @@
 ﻿using IdentityModel;
-using IdentityServerNETIdentity.Data;
 using IdentityServerNETIdentity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System.Security.Claims;
 
-namespace IdentityServerNETIdentity
+namespace IdentityServerNETIdentity.Data
 {
     public class SeedData
     {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace IdentityServerNETIdentity
+namespace IdentityServerNETIdentity.ConfigExtensions
 {
     internal static class HostingExtensions
     {
