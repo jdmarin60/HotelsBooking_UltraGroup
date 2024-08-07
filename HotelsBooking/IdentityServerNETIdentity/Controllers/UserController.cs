@@ -10,7 +10,7 @@ using Serilog;
 
 namespace IdentityServerNETIdentity.Controllers
 {
-    [Route("[controller]")]
+    [Route("[Controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace IdentityServerNETIdentity.Controllers
             _userService = userService;
         }
 
-        [HttpPost("authenticate")]
+        [HttpPost("Authenticate")]
         public async Task<IActionResult> Autenticate(LoginViewModel loginModel)
         {
             try
