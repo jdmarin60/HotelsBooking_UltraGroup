@@ -1,4 +1,4 @@
-using ReservasHoteles.ConfigExtensions;
+using HotelsBooking.Shared.ConfigExtensions;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()

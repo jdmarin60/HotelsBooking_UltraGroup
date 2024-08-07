@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using HotelsBooking.Bookings.Domain;
+using HotelsBooking.Rooms.Domain;
 
-namespace ReservasHoteles.Models
+namespace HotelsBooking.Hotels.Domain
 {
     public class Hotel
     {
@@ -10,13 +12,13 @@ namespace ReservasHoteles.Models
 
         [Required]
         public string Name { get; set; } = string.Empty;
-        
+
         [Required]
         public bool Enable { get; set; }
 
         [Required]
         public string Address { get; set; } = string.Empty;
-        
+
         [Required]
         public bool Qualification { get; set; }
 

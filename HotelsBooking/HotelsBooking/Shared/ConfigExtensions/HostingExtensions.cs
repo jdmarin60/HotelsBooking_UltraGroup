@@ -1,9 +1,9 @@
-﻿using HotelsBooking.Data;
+﻿using HotelsBooking.Shared.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace ReservasHoteles.ConfigExtensions
+namespace HotelsBooking.Shared.ConfigExtensions
 {
     internal static class HostingExtensions
     {

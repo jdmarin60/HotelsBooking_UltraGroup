@@ -26,4 +26,16 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Bookings\Infrastructure\" />
+    <Folder Include="EmergencyContacts\Application\" />
+    <Folder Include="EmergencyContacts\Infrastructure\" />
+    <Folder Include="Guests\Application\" />
+    <Folder Include="Guests\Infrastructure\" />
+    <Folder Include="Hotels\Application\" />
+    <Folder Include="Hotels\Infrastructure\" />
+    <Folder Include="Rooms\Application\" />
+    <Folder Include="Rooms\Infrastructure\" />
+  </ItemGroup>
+
 </Project>

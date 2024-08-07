@@ -1,6 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HotelsBooking.Bookings.Domain;
+using HotelsBooking.EmergencyContacts.Domain;
+using System.ComponentModel.DataAnnotations;
 
-namespace ReservasHoteles.Models
+namespace HotelsBooking.Guests.Domain
 {
     public class Guest
     {
@@ -10,7 +12,7 @@ namespace ReservasHoteles.Models
 
         [Required]
         public string Name { get; set; } = string.Empty;
-        
+
         [Required]
         public DateTime FechaNacimiento { get; set; } = new DateTime();
 
@@ -22,7 +24,7 @@ namespace ReservasHoteles.Models
 
         [Required]
         public string DocumentNumber { get; set; } = string.Empty;
-        
+
         [Required]
         public string Email { get; set; } = string.Empty;
 
@@ -34,9 +36,9 @@ namespace ReservasHoteles.Models
         public Booking Booking { get; set; }
 
         public EmergencyContact? EmergencyContact { get; set; }
-        
+
         public DateTime CreatedAt { get; set; } = new DateTime();
-        
+
         public DateTime ModifyDate { get; set; } = new DateTime();
     }
 }

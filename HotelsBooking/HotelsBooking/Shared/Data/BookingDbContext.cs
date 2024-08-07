@@ -1,8 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ReservasHoteles.Models;
+﻿using HotelsBooking.Bookings.Domain;
+using HotelsBooking.EmergencyContacts.Domain;
+using HotelsBooking.Guests.Domain;
+using HotelsBooking.Hotels.Domain;
+using HotelsBooking.Rooms.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace HotelsBooking.Data
+namespace HotelsBooking.Shared.Data
 {
     public class BookingDbContext : DbContext
     {

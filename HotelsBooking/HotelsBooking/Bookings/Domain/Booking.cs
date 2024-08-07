@@ -1,6 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HotelsBooking.Guests.Domain;
+using HotelsBooking.Hotels.Domain;
+using System.ComponentModel.DataAnnotations;
 
-namespace ReservasHoteles.Models
+namespace HotelsBooking.Bookings.Domain
 {
     public class Booking
     {
