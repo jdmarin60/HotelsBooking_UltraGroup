@@ -18,8 +18,17 @@ namespace IdentityServerNETIdentity.ConfigExtensions
         readonly static string SpecificOrigins = "_specificOrigins";
         public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
         {
+            builder.Configuration
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables();
+
             var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
             var configuration = builder.Configuration;
+
+            var AppSettings = configuration.GetSection("AppSettings");
+            builder.Services.Configure<AppSettings>(AppSettings);
+
             string? connectionString = configuration.GetConnectionString("DefaultConnection");
             string? clientId = configuration["AppSettings:ClientId"];
             string? secret = configuration["AppSettings:Secret"];
@@ -57,15 +66,8 @@ namespace IdentityServerNETIdentity.ConfigExtensions
                 .AddInMemoryPersistedGrants()
                 .AddAspNetIdentity<ApplicationUser>();
 
-            builder.Configuration
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddEnvironmentVariables();
-
-            var AppSettings = builder.Configuration.GetSection("AppSettings");
-
             builder.Services.AddControllers();
-            builder.Services.Configure<AppSettings>(AppSettings);
+            
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddSwaggerGen();
 
